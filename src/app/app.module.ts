@@ -3,38 +3,51 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { ResultadoPage } from '../pages/resultado/resultado';
+import { PosicionPage } from '../pages/posicion/posicion';
+import { SeriePage } from '../pages/serie/serie';
+import { DetallepartidoPage } from '../pages/detallepartido/detallepartido';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
+// import { NgCircleProgressModule } from 'ng-circle-progress';
+//import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    TabsPage, 
+    ResultadoPage,
+    PosicionPage,
+    DetallepartidoPage,
+    SeriePage
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ResultadoPage,
+    PosicionPage,
+    DetallepartidoPage,
+    SeriePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Proveedor1Provider
   ]
 })
 export class AppModule {}

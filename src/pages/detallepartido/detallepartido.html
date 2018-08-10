@@ -1,0 +1,260 @@
+<!--
+  Generated template for the MasinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Detalle Partido</ion-title>
+    </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <p>Domingo 24 de mayo de 2018</p>
+    <div padding>
+        <ion-segment [(ngModel)]="serie">
+            <ion-segment-button value="tercera">
+                Tercera
+            </ion-segment-button>
+            <ion-segment-button value="segunda">
+                Segunda
+            </ion-segment-button>
+            <ion-segment-button value="senior">
+                Senior
+            </ion-segment-button>
+            <ion-segment-button value="primera">
+                Primera
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="serie">
+        <ion-list *ngSwitchCase="'tercera'">
+            <ion-item>
+                <ion-grid>
+                    <ion-row class="rowseparated">
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>-</ion-col>
+                        <ion-col col-2 text-center>7</ion-col>
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="football"></ion-icon>
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/yellow-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/red-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'segunda'">
+            <ion-item>
+                <ion-grid>
+                    <ion-row class="rowseparated">
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-2 text-center>-</ion-col>
+                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="football"></ion-icon>
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/yellow-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/red-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'senior'">
+            <ion-item>
+                <ion-grid>
+                    <ion-row class="rowseparated">
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-2 text-center>-</ion-col>
+                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="football"></ion-icon>
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/yellow-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/red-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'primera'">
+            <ion-item>
+                <ion-grid>
+                    <ion-row class="rowseparated">
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>-</ion-col>
+                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-3 text-center>
+                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
+                            <p class="textoDetallePartido">La huachera</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <ion-icon name="football"></ion-icon>
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowseparated">
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/yellow-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-5 text-left>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                        <ion-col col-2 text-center>
+                            <img src="../../assets/imgs/red-card-right.svg" alt="">
+                        </ion-col>
+                        <ion-col col-5 text-right>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

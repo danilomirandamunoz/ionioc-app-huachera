@@ -1,23 +1,28 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { MasinfoPage } from "../masinfo/masinfo";
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DetallepartidoPage } from "../detallepartido/detallepartido";
 
+/**
+ * Generated class for the ResultadoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-resultado',
+  templateUrl: 'resultado.html',
 })
-export class AboutPage {
+export class ResultadoPage {
 
-
-
-  constructor(public navCtrl: NavController) {
-
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
 
   abrirDetalle(item)
   {
-    this.navCtrl.push(MasinfoPage,{item});
+    this.navCtrl.push(DetallepartidoPage,{item});
   }
 
   lista: Array<any> = [

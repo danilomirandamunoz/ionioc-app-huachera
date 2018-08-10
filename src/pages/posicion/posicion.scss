@@ -1,7 +1,4 @@
-page-home {
-    .naranjo {
-        background-color: #ff5704;
-    }
+page-posicion {
     .rowCabecera>ion-col {
         font-size: 7px;
         background-color: #215584;
@@ -16,7 +13,10 @@ page-home {
     .col-pts {
         background-color: #d9ebfb;
     }
-    .font-size-12 {
-        font-size: 12px;
+    .col-odd {
+        background-color: #f9f9f9;
+    }
+    .col-even {
+        background-color: #ffffff;
     }
 }

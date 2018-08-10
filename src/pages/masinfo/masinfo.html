@@ -1,0 +1,57 @@
+<!--
+  Generated template for the MasinfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Detalle Partido</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div padding>
+        <ion-segment [(ngModel)]="series">
+            <ion-segment-button value="tercera">
+                Tercera
+            </ion-segment-button>
+            <ion-segment-button value="segunda">
+                Segunda
+            </ion-segment-button>
+            <ion-segment-button value="senior">
+                Senior
+            </ion-segment-button>
+            <ion-segment-button value="primera">
+                Primera
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="series">
+        <ion-list *ngSwitchCase="'tercera'">
+            <ion-item>
+                <h2>tercera</h2>
+            </ion-item>
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'segunda'">
+            <ion-item>
+                <h2>segunda</h2>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'senior'">
+            <ion-item>
+                <h2>senior</h2>
+            </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'primera'">
+            <ion-item>
+                <h2>primera</h2>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

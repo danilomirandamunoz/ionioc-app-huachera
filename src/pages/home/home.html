@@ -1,17 +1,83 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<ion-header class="naranjo">
+    <ion-navbar color="#ff5704">
+
+        <ion-title text-center>C.D. HUACHERA</ion-title>
+
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+    <img src="../../assets/imgs/huachera.png" width="300" text-center/>
+
+    <ion-card>
+
+        <ion-card-header>
+            <p text-center>Próximo Partido</p>
+            <p text-center>Estadio Ferroviario</p>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-2 left>
+                        <img src="../../assets/imgs/huachera.png" />
+                    </ion-col>
+                    <ion-col col-8>
+                        <p text-center>- vs -</p>
+                    </ion-col>
+                    <ion-col col-2 right>
+                        <img src="../../assets/imgs/huachera.png" />
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-12 text-center class="font-size-12">
+                        <p>Domingo, 24 de abril de 2018</p>
+                    </ion-col>
+
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+
+        <ion-card-header>
+            <p text-center>Expulsados</p>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-grid>
+                <ion-row class="rowCabecera">
+                    <ion-col col-8>
+                        Jugador
+                    </ion-col>
+                    <ion-col col-2>
+                        PA
+                    </ion-col>
+                    <ion-col col-2>
+                        PP
+                    </ion-col>
+                </ion-row>
+                <ion-row class="rowData" *ngFor="let pos of expulsados">
+                    <ion-col col-8>
+                        {{pos.nombre}}
+                    </ion-col>
+                    <ion-col col-2>
+                        {{pos.pa}}
+                    </ion-col>
+                    <ion-col col-2 class="col-pts">
+                        {{pos.pp}}
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+            <p class="font-size-12">PA=Partidos Asignados</p>
+            <p class="font-size-12">PP=Partidos Pendientes</p>
+        </ion-card-content>
+
+
+
+    </ion-card>
+
 </ion-content>

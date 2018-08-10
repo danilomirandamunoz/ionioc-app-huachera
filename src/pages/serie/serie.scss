@@ -1,0 +1,26 @@
+page-serie {
+    .size-9 {
+        font-size: 9px;
+    }
+    .size-15 {
+        font-size: 15px;
+    }
+    .div-circular {
+        width: 60px;
+        height: 60px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        border: 0.55px solid #c8c7cc;
+    }
+    .rounded {
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        background-color: #215584;
+        color: white;
+        font-weight: bold;
+    }
+    .rounded p {
+        color: white;
+        font-weight: bold;
+    }
+}
