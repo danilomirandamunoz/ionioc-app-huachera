@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 /**
  * Generated class for the PosicionPage page.
@@ -17,10 +18,39 @@ export class PosicionPage {
 
   serie:String;
   posiciones;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private localNotifications: LocalNotifications, public alertCtrl: AlertController) {
     this.serie ="general";
     this.posiciones = this.obtenerPosiciones();
 
+     this.localNotifications.on("click").subscribe((notification)=>{
+
+      let alert = alertCtrl.create({
+        title: notification.title,
+        subTitle: notification.text,
+        message: notification.data.mydata
+      });
+      alert.present();
+    });
+
+
+  }
+
+
+  notificacion()
+  {
+    console.log("notificacion");
+    this.localNotifications.schedule({
+      id: 1,
+      title: 'C.D. HUCAHERA',
+      text: 'Expulsados fecha 6',
+      data: { mydata: `
+      <p>Jugador 1 : <b>3 fechas</b></p>
+      <p>Jugador 2 : <b>3 fechas</b></p>
+      <p>Jugador 3 : <b>3 fechas</b></p>
+      <p>Jugador 4 : <b>3 fechas</b></p>
+      <p>Jugador 5 : <b>3 fechas</b></p>
+      <p>Jugador 6 : <b>3 fechas</b></p>` }
+    });
   }
 
   ionViewDidLoad() {
