@@ -39,7 +39,7 @@ export class PosicionPage {
         pg: 6,
         pe:4,
         pp:3,
-        class:"col-odd"
+        class:"celda-up"
       },
       {
         pos: 2,
@@ -49,7 +49,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-up"
       },
       {
         pos: 3,
@@ -59,7 +60,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-up"
       },
       {
         pos: 4,
@@ -69,7 +71,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-up"
       },
       {
         pos: 5,
@@ -79,7 +82,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-up"
       },
       {
         pos: 6,
@@ -89,7 +93,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-normal"
       },
       {
         pos: 7,
@@ -99,7 +104,8 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-normal"
       },
       {
         pos: 8,
@@ -109,7 +115,52 @@ export class PosicionPage {
         pj: 10,
         pg: 6,
         pe:4,
-        pp:3
+        pp:3,
+        class:"celda-normal"
+      },
+      {
+        pos: 9,
+        img:'../../assets/imgs/huachera.png',
+        club:'La huachera',
+        pts:60,
+        pj: 10,
+        pg: 6,
+        pe:4,
+        pp:3,
+        class:"celda-down"
+      },
+      {
+        pos: 10,
+        img:'../../assets/imgs/huachera.png',
+        club:'La huachera',
+        pts:60,
+        pj: 10,
+        pg: 6,
+        pe:4,
+        pp:3,
+        class:"celda-down"
+      },
+      {
+        pos: 11,
+        img:'../../assets/imgs/huachera.png',
+        club:'La huachera',
+        pts:60,
+        pj: 10,
+        pg: 6,
+        pe:4,
+        pp:3,
+        class:"celda-down"
+      },
+      {
+        pos: 12,
+        img:'../../assets/imgs/huachera.png',
+        club:'La huachera',
+        pts:60,
+        pj: 10,
+        pg: 6,
+        pe:4,
+        pp:3,
+        class:"celda-down"
       },
     ]
   }

@@ -5,16 +5,22 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="orangeHuachera">
         <ion-title>
             Resultados
         </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="home">
     <!-- Lista -->
-    <p>A continuación se detallan los resultados de las fechas del campeonato actual.</p>
+    <p>A continuación se detallan los resultados de las fechas de un campenato dado.</p>
+    <ion-item>
+        <ion-label>Campeonato</ion-label>
+        <ion-select [(ngModel)]="idCampeonato" (ionChange)="cargarResultadosCampeonato()">
+            <ion-option *ngFor="let item of campeonatos" [value]="item.id">{{item.ano}}</ion-option>
+        </ion-select>
+    </ion-item>
     <ion-card *ngFor="let item of lista" (click)="abrirDetalle(item)" class="itemlistaresult">
 
         <ion-card-header>
@@ -28,7 +34,7 @@
                         <img src="{{item.imgLocal}}" />
                     </ion-col>
                     <ion-col col-8>
-                        <p text-center>{{item.ptsLocal}} - vs - {{item.ptsVisita}}</p>
+                        <p text-center>{{item.ptsLocal}} ------ {{item.ptsVisita}}</p>
                     </ion-col>
                     <ion-col col-2 right>
                         <img src="{{item.imgVisita}}" />

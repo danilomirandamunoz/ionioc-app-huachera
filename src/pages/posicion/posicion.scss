@@ -8,7 +8,7 @@ page-posicion {
     .rowData>ion-col {
         font-size: 7px;
         border-bottom: 0.55px solid #c8c7cc;
-        height: 25px;
+        height: 38px;
     }
     .col-pts {
         background-color: #d9ebfb;
@@ -18,5 +18,46 @@ page-posicion {
     }
     .col-even {
         background-color: #ffffff;
+    }
+    .celda-up {
+        background: rgba(0, 177, 0, .5);
+        border-left: 3px solid #00b100;
+    }
+    .celda-down {
+        background: rgba(232, 89, 84, .2);
+        border-left: 3px solid #e85954;
+    }
+    .celda-normal {
+        border-left: 3px solid #38c9f3;
+        background: rgba(56, 201, 243, .2);
+    }
+    .card-color {
+        background-color: rgba(56, 201, 243, .2);
+    }
+    .equipo-centrado-vertical {
+        vertical-align: middle;
+        padding-left: 15px;
+    }
+    .texto-posicion {
+        font-size: 15px!important;
+        color: black;
+        flex: 0 0 30px;
+        padding: 0;
+    }
+    .texto-club-tabla {
+        color: #337ab7;
+        vertical-align: middle;
+        padding-left: 30px;
+        padding-top: 15px;
+        font-size: 12px;
+    }
+    .texto-numero-tabla {
+        font-size: 12px!important;
+        color: black;
+    }
+    .scroll-content {
+        min-width: 327px;
+        overflow-x: scroll!important;
+        word-wrap: break-word;
     }
 }

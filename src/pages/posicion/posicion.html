@@ -6,14 +6,14 @@
 -->
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="orangeHuachera">
         <ion-title>Tablas de Posiciones</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="home">
     <div padding>
         <ion-segment [(ngModel)]="serie">
             <ion-segment-button value="general">
@@ -36,11 +36,6 @@
 
     <div [ngSwitch]="serie">
         <ion-list *ngSwitchCase="'general'">
-            <ion-item>
-                <img src="../../assets/imgs/img_posiciones.png" alt="">
-            </ion-item>
-        </ion-list>
-        <ion-list *ngSwitchCase="'tercera'">
             <ion-item>
                 <ion-grid>
                     <ion-row class="rowCabecera">
@@ -67,31 +62,38 @@
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowData" *ngFor="let pos of posiciones">
-                        <ion-col col-1>
+                        <ion-col col-1 class="{{pos.class}} texto-posicion">
                             {{pos.pos}}
                         </ion-col>
-                        <ion-col col-6>
-                            <img src="{{pos.img}}" alt="" width="15px"> {{pos.club}}
+                        <ion-col col-6 class="equipo-centrado-vertical">
+                            <img src="{{pos.img}}" alt="" width="25px">
+                            <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
                         </ion-col>
-                        <ion-col col-1 class="col-pts">
+                        <ion-col col-1 class="col-pts texto-numero-tabla">
                             {{pos.pts}}
                         </ion-col>
-                        <ion-col col-1>
+                        <ion-col col-1 class="texto-numero-tabla">
                             {{pos.pj}}
                         </ion-col>
-                        <ion-col col-1>
+                        <ion-col col-1 class="texto-numero-tabla">
                             {{pos.pg}}
                         </ion-col>
-                        <ion-col col-1>
+                        <ion-col col-1 class="texto-numero-tabla">
                             {{pos.pe}}
                         </ion-col>
-                        <ion-col col-1>
+                        <ion-col col-1 class="texto-numero-tabla">
                             {{pos.pp}}
                         </ion-col>
                     </ion-row>
 
                 </ion-grid>
             </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'tercera'" class="card-color">
+            <ion-item>
+                <h2>tercera</h2>
+            </ion-item>
+
         </ion-list>
 
         <ion-list *ngSwitchCase="'segunda'">

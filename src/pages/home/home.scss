@@ -1,12 +1,13 @@
 page-home {
     .naranjo {
-        background-color: #ff5704;
+        background-color: #ff5704!important;
     }
     .rowCabecera>ion-col {
         font-size: 7px;
         background-color: #215584;
         color: white;
         font-weight: bold;
+        text-align: left;
     }
     .rowData>ion-col {
         font-size: 7px;
@@ -18,5 +19,8 @@ page-home {
     }
     .font-size-12 {
         font-size: 12px;
+    }
+    .card-color {
+        background-color: rgba(56, 201, 243, .2);
     }
 }
