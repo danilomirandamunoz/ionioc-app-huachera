@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { DetallepartidoPage } from "../detallepartido/detallepartido";
-
+import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import { Respuesta } from '../respuesta';
 /**
  * Generated class for the ResultadoPage page.
  *
@@ -24,7 +27,8 @@ export class ResultadoPage {
   idCampeonato;
   campeonatos;
   danilo;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController
+    , public proveedor:Proveedor1Provider) {
     
 
     
@@ -51,20 +55,27 @@ export class ResultadoPage {
     this.lista = [];
     
     let idCampeonato = this.idCampeonato;
-    let listaAux = this.cargarResultados(idCampeonato);
 
-    for (let i = 0; i < listaAux.length; i++) {
-      
-      listaAux[i].color = this.colores[Math.floor(Math.random() * this.colores.length)];
-      
-    }
-    
-
-    setTimeout(() => {
+    this.proveedor.obtenerResultadosPorCampeonato(idCampeonato)
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
+      {
+        console.log(data.obj);
+      }
+      else{
+        this.lista = data.obj;
+      }
       loading.dismiss();
-      this.lista = listaAux;
-    }, 3000);
+    },
+    (error)=>{console.log(error);})
+    
+  }
 
+  recargar()
+  {
+    this.cargarCampeonatos();
+    this.idCampeonato = 1;
+    this.cargarResultadosCampeonato();
   }
 
 
@@ -76,6 +87,9 @@ export class ResultadoPage {
   
   cargarCampeonatos()
   {
+
+
+
     this.campeonatos =  [
       {
         id:1,

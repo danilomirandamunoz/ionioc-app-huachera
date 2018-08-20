@@ -21,27 +21,32 @@
             <ion-option *ngFor="let item of campeonatos" [value]="item.id">{{item.ano}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-card *ngFor="let item of lista" (click)="abrirDetalle(item)" class="itemlistaresult">
+    <ion-card *ngFor="let item of lista" (click)="abrirDetalle(item.id_encuentro)" class="itemlistaresult">
 
         <ion-card-header>
-            <p text-center>{{ item.nroFecha }}</p>
+            <p text-center>Fecha n° {{ item.nro_fecha }} </p>
+            <p text-center> {{ item.estadio }}</p>
+            <p text-center> {{ item.fecha }}</p>
         </ion-card-header>
 
         <ion-card-content>
             <ion-grid>
                 <ion-row>
                     <ion-col col-2 left>
-                        <img src="{{item.imgLocal}}" />
+                        <img src="{{item.escudo_equipo_local}}" />
                     </ion-col>
                     <ion-col col-8>
-                        <p text-center>{{item.ptsLocal}} ------ {{item.ptsVisita}}</p>
+                        <p text-center>{{item.puntos_local}} ------ {{item.puntos_visita}}</p>
                     </ion-col>
                     <ion-col col-2 right>
-                        <img src="{{item.imgVisita}}" />
+                        <img src="{{item.escudo_equipo_visita}}" />
                     </ion-col>
                 </ion-row>
             </ion-grid>
         </ion-card-content>
 
     </ion-card>
+    <ion-fab top right edge>
+        <button color="azulHuachera" ion-fab (click)="recargar()"><ion-icon name="refresh"></ion-icon></button>
+    </ion-fab>
 </ion-content>

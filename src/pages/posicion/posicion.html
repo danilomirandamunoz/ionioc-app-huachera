@@ -61,28 +61,28 @@
                             PP
                         </ion-col>
                     </ion-row>
-                    <ion-row class="rowData" *ngFor="let pos of posiciones">
+                    <ion-row class="rowData" *ngFor="let pos of detalleGeneral">
                         <ion-col col-1 class="{{pos.class}} texto-posicion">
                             {{pos.pos}}
                         </ion-col>
                         <ion-col col-6 class="equipo-centrado-vertical">
-                            <img src="{{pos.img}}" alt="" width="25px">
+                            <img src="{{pos.escudo_equipo_local}}" alt="" width="25px">
                             <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
                         </ion-col>
                         <ion-col col-1 class="col-pts texto-numero-tabla">
-                            {{pos.pts}}
+                            {{pos.puntos}}
                         </ion-col>
                         <ion-col col-1 class="texto-numero-tabla">
-                            {{pos.pj}}
+                            {{pos.partidos_jugados}}
                         </ion-col>
                         <ion-col col-1 class="texto-numero-tabla">
-                            {{pos.pg}}
+                            {{pos.partidos_ganados}}
                         </ion-col>
                         <ion-col col-1 class="texto-numero-tabla">
-                            {{pos.pe}}
+                            {{pos.partidos_empatados}}
                         </ion-col>
                         <ion-col col-1 class="texto-numero-tabla">
-                            {{pos.pp}}
+                            {{pos.partidos_perdidos}}
                         </ion-col>
                     </ion-row>
 
@@ -91,26 +91,224 @@
         </ion-list>
         <ion-list *ngSwitchCase="'tercera'" class="card-color">
             <ion-item>
-                <h2>tercera</h2>
-                <button ion-button (click)="notificacion()">Default</button>
+                <ion-grid>
+                    <ion-row class="rowCabecera">
+                        <ion-col col-1>
+                            POS
+                        </ion-col>
+                        <ion-col col-6>
+                            CLUB
+                        </ion-col>
+                        <ion-col col-1>
+                            PTS
+                        </ion-col>
+                        <ion-col col-1>
+                            PJ
+                        </ion-col>
+                        <ion-col col-1>
+                            PG
+                        </ion-col>
+                        <ion-col col-1>
+                            PE
+                        </ion-col>
+                        <ion-col col-1>
+                            PP
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowData" *ngFor="let pos of detalleTercera">
+                        <ion-col col-1 class="{{pos.class}} texto-posicion">
+                            {{pos.pos}}
+                        </ion-col>
+                        <ion-col col-6 class="equipo-centrado-vertical">
+                            <img src="{{pos.escudo_equipo_local}}" alt="" width="25px">
+                            <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
+                        </ion-col>
+                        <ion-col col-1 class="col-pts texto-numero-tabla">
+                            {{pos.puntos}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_jugados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_ganados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_empatados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_perdidos}}
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
             </ion-item>
 
         </ion-list>
 
         <ion-list *ngSwitchCase="'segunda'">
             <ion-item>
-                <h2>segunda</h2>
+                <ion-grid>
+                    <ion-row class="rowCabecera">
+                        <ion-col col-1>
+                            POS
+                        </ion-col>
+                        <ion-col col-6>
+                            CLUB
+                        </ion-col>
+                        <ion-col col-1>
+                            PTS
+                        </ion-col>
+                        <ion-col col-1>
+                            PJ
+                        </ion-col>
+                        <ion-col col-1>
+                            PG
+                        </ion-col>
+                        <ion-col col-1>
+                            PE
+                        </ion-col>
+                        <ion-col col-1>
+                            PP
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowData" *ngFor="let pos of detalleSegunda">
+                        <ion-col col-1 class="{{pos.class}} texto-posicion">
+                            {{pos.pos}}
+                        </ion-col>
+                        <ion-col col-6 class="equipo-centrado-vertical">
+                            <img src="{{pos.escudo_equipo_local}}" alt="" width="25px">
+                            <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
+                        </ion-col>
+                        <ion-col col-1 class="col-pts texto-numero-tabla">
+                            {{pos.puntos}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_jugados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_ganados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_empatados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_perdidos}}
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
             </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'senior'">
             <ion-item>
-                <h2>senior</h2>
+                <ion-grid>
+                    <ion-row class="rowCabecera">
+                        <ion-col col-1>
+                            POS
+                        </ion-col>
+                        <ion-col col-6>
+                            CLUB
+                        </ion-col>
+                        <ion-col col-1>
+                            PTS
+                        </ion-col>
+                        <ion-col col-1>
+                            PJ
+                        </ion-col>
+                        <ion-col col-1>
+                            PG
+                        </ion-col>
+                        <ion-col col-1>
+                            PE
+                        </ion-col>
+                        <ion-col col-1>
+                            PP
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowData" *ngFor="let pos of detalleSenior">
+                        <ion-col col-1 class="{{pos.class}} texto-posicion">
+                            {{pos.pos}}
+                        </ion-col>
+                        <ion-col col-6 class="equipo-centrado-vertical">
+                            <img src="{{pos.escudo_equipo_local}}" alt="" width="25px">
+                            <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
+                        </ion-col>
+                        <ion-col col-1 class="col-pts texto-numero-tabla">
+                            {{pos.puntos}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_jugados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_ganados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_empatados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_perdidos}}
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
             </ion-item>
         </ion-list>
         <ion-list *ngSwitchCase="'primera'">
             <ion-item>
-                <h2>primera</h2>
+                <ion-grid>
+                    <ion-row class="rowCabecera">
+                        <ion-col col-1>
+                            POS
+                        </ion-col>
+                        <ion-col col-6>
+                            CLUB
+                        </ion-col>
+                        <ion-col col-1>
+                            PTS
+                        </ion-col>
+                        <ion-col col-1>
+                            PJ
+                        </ion-col>
+                        <ion-col col-1>
+                            PG
+                        </ion-col>
+                        <ion-col col-1>
+                            PE
+                        </ion-col>
+                        <ion-col col-1>
+                            PP
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="rowData" *ngFor="let pos of detallePrimera">
+                        <ion-col col-1 class="{{pos.class}} texto-posicion">
+                            {{pos.pos}}
+                        </ion-col>
+                        <ion-col col-6 class="equipo-centrado-vertical">
+                            <img src="{{pos.escudo_equipo_local}}" alt="" width="25px">
+                            <!-- <p class="texto-club-tabla">{{pos.club}}</p> -->
+                        </ion-col>
+                        <ion-col col-1 class="col-pts texto-numero-tabla">
+                            {{pos.puntos}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_jugados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_ganados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_empatados}}
+                        </ion-col>
+                        <ion-col col-1 class="texto-numero-tabla">
+                            {{pos.partidos_perdidos}}
+                        </ion-col>
+                    </ion-row>
+
+                </ion-grid>
             </ion-item>
         </ion-list>
     </div>
+    <ion-fab top right edge>
+        <button color="azulHuachera" ion-fab (click)="recargar()"><ion-icon name="refresh"></ion-icon></button>
+    </ion-fab>
 </ion-content>

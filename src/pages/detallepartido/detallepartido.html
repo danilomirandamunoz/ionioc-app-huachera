@@ -33,55 +33,52 @@
     <div [ngSwitch]="serie">
         <ion-list *ngSwitchCase="'tercera'">
             <ion-item>
-                <ion-grid>
+                <ion-grid *ngFor="let enc of detalleTercera">
                     <ion-row class="rowseparated">
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_local}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_local}}</p>
                         </ion-col>
-                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_local}}</ion-col>
                         <ion-col col-2 text-center>-</ion-col>
-                        <ion-col col-2 text-center>7</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_visita}}</ion-col>
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_visita}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_local}}</p>
+
                         </ion-col>
                         <ion-col col-2 text-center>
                             <ion-icon name="football"></ion-icon>
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/yellow-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/red-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_visita}}</p>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -90,55 +87,52 @@
 
         <ion-list *ngSwitchCase="'segunda'">
             <ion-item>
-                <ion-grid>
+                <ion-grid *ngFor="let enc of detalleSegunda">
                     <ion-row class="rowseparated">
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_local}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_local}}</p>
                         </ion-col>
-                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_local}}</ion-col>
                         <ion-col col-2 text-center>-</ion-col>
-                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_visita}}</ion-col>
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_visita}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_local}}</p>
+
                         </ion-col>
                         <ion-col col-2 text-center>
                             <ion-icon name="football"></ion-icon>
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/yellow-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/red-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_visita}}</p>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -146,55 +140,52 @@
         </ion-list>
         <ion-list *ngSwitchCase="'senior'">
             <ion-item>
-                <ion-grid>
+                <ion-grid *ngFor="let enc of detalleSenior">
                     <ion-row class="rowseparated">
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_local}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_local}}</p>
                         </ion-col>
-                        <ion-col col-2 text-center>0</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_local}}</ion-col>
                         <ion-col col-2 text-center>-</ion-col>
-                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_visita}}</ion-col>
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_visita}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_local}}</p>
+
                         </ion-col>
                         <ion-col col-2 text-center>
                             <ion-icon name="football"></ion-icon>
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/yellow-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/red-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_visita}}</p>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -202,55 +193,52 @@
         </ion-list>
         <ion-list *ngSwitchCase="'primera'">
             <ion-item>
-                <ion-grid>
+                <ion-grid *ngFor="let enc of detallePrimera">
                     <ion-row class="rowseparated">
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_local}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_local}}</p>
                         </ion-col>
-                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_local}}</ion-col>
                         <ion-col col-2 text-center>-</ion-col>
-                        <ion-col col-2 text-center>1</ion-col>
+                        <ion-col col-2 text-center>{{enc.numero_goles_visita}}</ion-col>
                         <ion-col col-3 text-center>
-                            <img src="../../assets/imgs/huachera.png" alt="" width="25px">
-                            <p class="textoDetallePartido">La huachera</p>
+                            <img src="{{enc.escudo_equipo_visita}}" alt="" width="25px">
+                            <p class="textoDetallePartido">{{enc.nombre_equipo_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_local}}</p>
+
                         </ion-col>
                         <ion-col col-2 text-center>
                             <ion-icon name="football"></ion-icon>
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.goles_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row class="rowseparated">
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/yellow-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.amarillas_visita}}</p>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col col-5 text-left>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_local}}</p>
                         </ion-col>
                         <ion-col col-2 text-center>
                             <img src="../../assets/imgs/red-card-right.svg" alt="">
                         </ion-col>
                         <ion-col col-5 text-right>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
-                            <p class="textoDetallePartido">jugador nro 4 - 54'</p>
+                            <p class="textoDetallePartido">{{enc.rojas_visita}}</p>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

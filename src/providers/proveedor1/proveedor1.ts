@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { HttpClientModule } from '@angular/common/http';
+ import { HttpClientModule } from '@angular/common/http';
 
 /*
   Generated class for the Proveedor1Provider provider.
@@ -15,8 +15,29 @@ export class Proveedor1Provider {
     console.log('Hello Proveedor1Provider Provider');
   }
 
-  // obtenerDatos()
-  // {
-  //   return this.http.get("https://jsonplaceholder.typicode.com/users")
-  // }
+  obtenerExpulsados()
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/expulsados/1");
+  }
+
+  obtenerProximoEncuentro()
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/proximoencuentro/1?idequipo=1");
+  }
+
+  obtenerResultadosPorCampeonato(idCampeonato:number)
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/encuentros/"+idCampeonato+"");
+  }
+
+  obtenerDetalleEncuentro(idEncuentro:number, idSerie:number)
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/encuentrodetalle/"+idEncuentro+"?idSerie="+idSerie+"");
+  }
+
+  obtenerPosiciones(idtipo:number, idCampeonato:number)
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/tablaposiciones/"+idCampeonato+"?idTipo="+idtipo+"");
+  }
+
 }

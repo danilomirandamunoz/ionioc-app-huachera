@@ -13,10 +13,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
-import { BackgroundMode } from '@ionic-native/background-mode';
+//import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 // import { NgCircleProgressModule } from 'ng-circle-progress';
-//import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +33,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    //HttpClientModule
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +50,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Proveedor1Provider,
-    BackgroundMode,
+    //BackgroundMode,
     LocalNotifications
   ]
 })

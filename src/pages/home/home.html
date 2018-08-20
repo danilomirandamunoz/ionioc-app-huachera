@@ -9,29 +9,29 @@
 <ion-content padding text-center class="home">
     <img src="../../assets/imgs/huachera.png" width="300" text-center/>
 
-    <ion-card class="card-color">
+    <ion-card class="card-color" *ngFor="let enc of proximoEncuentro">
 
         <ion-card-header>
-            <p text-center>Próximo Partido</p>
-            <p text-center>Estadio Ferroviario</p>
+            <p text-center>Próximo Partido Fecha n° {{enc.nro_fecha}}</p>
+            <p text-center>{{enc.estadio}}</p>
         </ion-card-header>
 
         <ion-card-content>
             <ion-grid>
                 <ion-row>
                     <ion-col col-2 left>
-                        <img src="../../assets/imgs/huachera.png" />
+                        <img src="{{enc.escudo_equipo_local}}" />
                     </ion-col>
                     <ion-col col-8>
                         <p text-center>- vs -</p>
                     </ion-col>
                     <ion-col col-2 right>
-                        <img src="../../assets/imgs/huachera.png" />
+                        <img src="{{enc.escudo_equipo_visita}}" />
                     </ion-col>
                 </ion-row>
                 <ion-row>
                     <ion-col col-12 text-center class="font-size-12">
-                        <p>Domingo, 24 de abril de 2018</p>
+                        <p>{{enc.fecha}}</p>
                     </ion-col>
 
                 </ion-row>
@@ -60,14 +60,14 @@
                     </ion-col>
                 </ion-row>
                 <ion-row class="rowData" *ngFor="let pos of expulsados">
-                    <ion-col col-8>
-                        {{pos.nombre}}
+                    <ion-col col-8 text-left>
+                        {{pos.jugador}}
                     </ion-col>
                     <ion-col col-2>
-                        {{pos.pa}}
+                        {{pos.partidos_asignados}}
                     </ion-col>
                     <ion-col col-2 class="col-pts">
-                        {{pos.pp}}
+                        {{pos.partidos_pendientes}}
                     </ion-col>
                 </ion-row>
 
@@ -79,5 +79,7 @@
 
 
     </ion-card>
-
+    <ion-fab top right edge>
+        <button color="azulHuachera" ion-fab (click)="recargar()"><ion-icon name="refresh"></ion-icon></button>
+    </ion-fab>
 </ion-content>
