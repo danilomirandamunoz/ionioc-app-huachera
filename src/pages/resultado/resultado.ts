@@ -33,9 +33,20 @@ export class ResultadoPage {
 
     
 
-    this.cargarCampeonatos();
-    this.idCampeonato = 1;
-    this.cargarResultadosCampeonato();
+      this.proveedor.obtenerCampeonatos()
+      .subscribe((data:Respuesta)=>{
+        if(!data.ok)
+        {
+          console.log(data.obj);
+        }
+        else{
+          this.campeonatos = data.obj;
+          console.log(this.campeonatos);
+          this.idCampeonato = this.campeonatos[0].id_campeonato;
+          this.cargarResultadosCampeonato();
+        }
+      },
+      (error)=>{console.log(error);})
     
   }
 
@@ -73,9 +84,20 @@ export class ResultadoPage {
 
   recargar()
   {
-    this.cargarCampeonatos();
-    this.idCampeonato = 1;
-    this.cargarResultadosCampeonato();
+    this.proveedor.obtenerCampeonatos()
+      .subscribe((data:Respuesta)=>{
+        if(!data.ok)
+        {
+          console.log(data.obj);
+        }
+        else{
+          this.campeonatos = data.obj;
+  
+          this.idCampeonato = this.campeonatos[0].id_campeonato;
+          this.cargarResultadosCampeonato();
+        }
+      },
+      (error)=>{console.log(error);})
   }
 
 
@@ -88,95 +110,20 @@ export class ResultadoPage {
   cargarCampeonatos()
   {
 
-
-
-    this.campeonatos =  [
+    this.proveedor.obtenerCampeonatos()
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
       {
-        id:1,
-        ano:"2018"
+        console.log(data.obj);
       }
-    ]
-  }
+      else{
+        this.campeonatos = data.obj;
 
-  cargarResultados(idCampeonato)
-  {
-    return [
-      {
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },
-      {
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },{
-        nroFecha: 'Fecha 1: 06-08-2018',
-        imgLocal: '../../assets/imgs/huachera.png',
-        imgVisita: '../../assets/imgs/huachera.png',
-        ptsLocal: 5,
-        ptsVisita: 6,
-        color:""
-      },
-  
-    ];
+        this.idCampeonato = this.campeonatos[0].id_campeonato;
+        this.cargarResultadosCampeonato();
+      }
+    },
+    (error)=>{console.log(error);})
   }
-
-  
 
 }

@@ -18,7 +18,7 @@
     <ion-item>
         <ion-label>Campeonato</ion-label>
         <ion-select [(ngModel)]="idCampeonato" (ionChange)="cargarResultadosCampeonato()">
-            <ion-option *ngFor="let item of campeonatos" [value]="item.id">{{item.ano}}</ion-option>
+            <ion-option *ngFor="let item of campeonatos" [value]="item.id_campeonato">{{item.nombre}}</ion-option>
         </ion-select>
     </ion-item>
     <ion-card *ngFor="let item of lista" (click)="abrirDetalle(item.id_encuentro)" class="itemlistaresult">

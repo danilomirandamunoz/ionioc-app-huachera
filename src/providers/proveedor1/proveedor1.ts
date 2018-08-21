@@ -20,6 +20,11 @@ export class Proveedor1Provider {
     return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/expulsados/1");
   }
 
+  obtenerCampeonatos()
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/campeonato");
+  }
+
   obtenerProximoEncuentro()
   {
     return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/proximoencuentro/1?idequipo=1");
