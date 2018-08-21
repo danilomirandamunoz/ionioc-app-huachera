@@ -8,4 +8,16 @@ page-resultado {
     .texto_medio_vertical {
         padding-top: 40px;
     }
+    .celda-up {
+        background: rgba(56, 201, 243, .2);
+        border: 5px solid #38c9f3;
+    }
+    .celda-down {
+        background: rgba(232, 89, 84, 0.438);
+        border: 5px solid #e85954;
+    }
+    .celda-normal {
+        border-left: 3px solid #38c9f3;
+        background: rgba(56, 201, 243, .2);
+    }
 }
