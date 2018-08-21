@@ -14,27 +14,34 @@
         <ion-card-header>
             <p text-center>Próximo Partido Fecha n° {{enc.nro_fecha}}</p>
             <p text-center>{{enc.estadio}}</p>
+            <p text-center>{{enc.fecha}}</p>
         </ion-card-header>
 
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                    <ion-col col-2 left>
+                    <ion-col col-5 text-center>
                         <img src="{{enc.escudo_equipo_local}}" />
                     </ion-col>
-                    <ion-col col-8>
+                    <ion-col col-2 class="texto_medio_vertical">
                         <p text-center>- vs -</p>
                     </ion-col>
-                    <ion-col col-2 right>
+                    <ion-col col-5 text-center>
                         <img src="{{enc.escudo_equipo_visita}}" />
                     </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col col-12 text-center class="font-size-12">
-                        <p>{{enc.fecha}}</p>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{enc.nombre_equipo_local}}</p>
                     </ion-col>
-
+                    <ion-col col-2>
+                        <p text-center></p>
+                    </ion-col>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{enc.nombre_equipo_visita}}</p>
+                    </ion-col>
                 </ion-row>
+
             </ion-grid>
 
         </ion-card-content>

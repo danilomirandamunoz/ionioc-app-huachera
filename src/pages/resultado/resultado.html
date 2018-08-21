@@ -32,14 +32,25 @@
         <ion-card-content>
             <ion-grid>
                 <ion-row>
-                    <ion-col col-2 left>
+                    <ion-col col-4 text-center>
                         <img src="{{item.escudo_equipo_local}}" />
                     </ion-col>
-                    <ion-col col-8>
-                        <p text-center>{{item.puntos_local}} ------ {{item.puntos_visita}}</p>
+                    <ion-col col-4 class="texto_medio_vertical">
+                        <p text-center>{{item.puntos_local}} -pts- {{item.puntos_visita}}</p>
                     </ion-col>
-                    <ion-col col-2 right>
+                    <ion-col col-4 text-center>
                         <img src="{{item.escudo_equipo_visita}}" />
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-4 text-center>
+                        <p class="font-size-12">{{item.nombre_equipo_local}}</p>
+                    </ion-col>
+                    <ion-col col-4>
+
+                    </ion-col>
+                    <ion-col col-4 text-center>
+                        <p class="font-size-12">{{item.nombre_equipo_visita}}</p>
                     </ion-col>
                 </ion-row>
             </ion-grid>

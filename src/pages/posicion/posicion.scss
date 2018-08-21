@@ -46,10 +46,16 @@ page-posicion {
     }
     .texto-club-tabla {
         color: #337ab7;
-        vertical-align: middle;
-        padding-left: 30px;
-        padding-top: 15px;
-        font-size: 12px;
+        padding-left: 18px;
+        padding-top: 10px;
+        font-size: 7px;
+        float: left;
+        position: absolute;
+    }
+    .img-club-tabla {
+        float: left;
+        position: fixed;
+        margin-left: -12px;
     }
     .texto-numero-tabla {
         font-size: 12px!important;
