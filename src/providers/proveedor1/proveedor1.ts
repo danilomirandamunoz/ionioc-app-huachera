@@ -45,4 +45,9 @@ export class Proveedor1Provider {
     return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/tablaposiciones/"+idCampeonato+"?idTipo="+idtipo+"");
   }
 
+  validarLogin(usuario:string, password:string, uid:string)
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/Login/?usuario="+usuario+"&pass="+password+"&uuid="+uid+"");
+  }
+
 }

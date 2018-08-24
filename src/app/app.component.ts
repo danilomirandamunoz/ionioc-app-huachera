@@ -4,16 +4,32 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { ModalLoginPage } from '../pages/modal-login/modal-login';
 //import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any;
 
-   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen/*,private backgroundMode: BackgroundMode*/, private localNotifications: LocalNotifications, public alertCtrl: AlertController) {
+   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen/*,private backgroundMode: BackgroundMode*/, 
+    private localNotifications: LocalNotifications, public alertCtrl: AlertController
+    ,private storage: Storage) {
+
+      this.storage.get('Login').then((val) => {
+        if(val == "1")
+        {
+          this.rootPage = TabsPage;
+        }
+        else{
+          this.rootPage = ModalLoginPage;
+        }
+      });
+
+    
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, ModalController } from 'ionic-angular';
 
 import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
 import { Observable } from 'rxjs/Observable';
@@ -15,7 +15,8 @@ export class HomePage {
 
   expulsados;
   proximoEncuentro;
-   constructor(public navCtrl: NavController, public proveedor:Proveedor1Provider, public loadingCtrl: LoadingController) {
+   constructor(public navCtrl: NavController, public proveedor:Proveedor1Provider, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
+
 
     let loading = this.loading();
 
@@ -69,6 +70,7 @@ export class HomePage {
 
     
   }
+
 
   loading() {
     let loading = this.loadingCtrl.create({
