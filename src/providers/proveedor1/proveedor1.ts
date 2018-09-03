@@ -15,9 +15,14 @@ export class Proveedor1Provider {
     console.log('Hello Proveedor1Provider Provider');
   }
 
-  obtenerExpulsados()
+  campeonatoActivo()
   {
-    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/expulsados/1");
+    return this.http.get("http://localhost:52102/api/campeonatoactivo/");
+  }
+
+  obtenerExpulsados(idCampeonato)
+  {
+    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/expulsados/"+idCampeonato+"");
   }
 
   obtenerCampeonatos()
@@ -25,9 +30,14 @@ export class Proveedor1Provider {
     return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/campeonato");
   }
 
-  obtenerProximoEncuentro()
+  obtenerProximoEncuentro(idCampeonato)
   {
-    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/proximoencuentro/1?idequipo=1");
+    return this.http.get("http://localhost:52102/api/proximoencuentro/"+idCampeonato+"?idequipo=1");
+  }
+
+  obtenerResaultadosActuales(idCampeonato)
+  {
+    return this.http.get("http://localhost:52102/api/proximoencuentro/"+idCampeonato+"?idequipo=1");
   }
 
   obtenerResultadosPorCampeonato(idCampeonato:number)
@@ -42,7 +52,7 @@ export class Proveedor1Provider {
 
   obtenerPosiciones(idtipo:number, idCampeonato:number)
   {
-    return this.http.get("http://danilomiranda-001-site4.itempurl.com/api/tablaposiciones/"+idCampeonato+"?idTipo="+idtipo+"");
+    return this.http.get("http://localhost:52102/api/tablaposiciones2/"+idCampeonato+"?idTipo="+idtipo+"");
   }
 
   validarLogin(usuario:string, password:string, uid:string)

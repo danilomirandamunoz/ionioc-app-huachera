@@ -5,6 +5,7 @@ import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
 import { Respuesta } from '../respuesta';
 import { Device } from '@ionic-native/device';
 import { Storage } from '@ionic/storage';
+import { GlobalvarsProvider } from '../../providers/globalvars/globalvars';
 /**
  * Generated class for the ModalLoginPage page.
  *
@@ -27,7 +28,8 @@ export class ModalLoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private loadingCtrl: LoadingController
     , public proveedor:Proveedor1Provider
   ,private device: Device
-,private storage: Storage) {
+,private storage: Storage
+, public globalVars: GlobalvarsProvider) {
 
   }
 
@@ -48,9 +50,25 @@ export class ModalLoginPage {
         this.showError(data.obj)
       }
       else{
-
+        console.log("login");
         this.storage.set("Login", 1);
-        this.navCtrl.setRoot(TabsPage);
+
+        this.proveedor.campeonatoActivo()
+          .subscribe((data:Respuesta)=>{
+            if(!data.ok)
+            {
+              console.log(data.obj);
+            }
+            else{
+              console.log("llegue al idcampeonato por el login", data.obj[0]);
+              this.globalVars.setIdCampeonato(data.obj[0].id_campeonato);
+              this.navCtrl.setRoot(TabsPage);
+            }
+          },
+          (error)=>{console.log(error);})
+
+
+        
         
       }
     },

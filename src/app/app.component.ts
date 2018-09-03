@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, AlertController} from 'ionic-angular';
+import { Platform, AlertController, NavController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -8,21 +8,43 @@ import { ModalLoginPage } from '../pages/modal-login/modal-login';
 //import { BackgroundMode } from '@ionic-native/background-mode';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Storage } from '@ionic/storage';
+import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
+import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
+import { Respuesta } from '../pages/respuesta';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any;
+  idCampeonato:number = 45;
 
    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen/*,private backgroundMode: BackgroundMode*/, 
     private localNotifications: LocalNotifications, public alertCtrl: AlertController
-    ,private storage: Storage) {
+    ,private storage: Storage
+    , public proveedor:Proveedor1Provider
+  , public globalVars: GlobalvarsProvider) {
 
       this.storage.get('Login').then((val) => {
         if(val == "1")
         {
-          this.rootPage = TabsPage;
+          this.proveedor.campeonatoActivo()
+          .subscribe((data:Respuesta)=>{
+            if(!data.ok)
+            {
+              console.log(data.obj);
+            }
+            else{
+              console.log("llegue al idcampeonato", data.obj[0]);
+              this.idCampeonato = data.obj[0].id_campeonato;
+              this.globalVars.setIdCampeonato(this.idCampeonato);
+              this.rootPage = TabsPage;
+            }
+          },
+          (error)=>{console.log(error);})
+          
+
+          
         }
         else{
           this.rootPage = ModalLoginPage;

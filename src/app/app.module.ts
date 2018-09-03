@@ -20,6 +20,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { HttpClientModule } from '@angular/common/http';
 import { Device } from '@ionic-native/device';
 import { IonicStorageModule } from '@ionic/storage';
+import { GlobalvarsProvider } from '../providers/globalvars/globalvars';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { IonicStorageModule } from '@ionic/storage';
     Proveedor1Provider,
     //BackgroundMode,
     LocalNotifications,
-    Device
+    Device,
+    GlobalvarsProvider
   ]
 })
 export class AppModule {}

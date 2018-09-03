@@ -35,10 +35,67 @@
                         <p class="font-size-12">{{enc.nombre_equipo_local}}</p>
                     </ion-col>
                     <ion-col col-2>
-                        <p text-center></p>
+
+                        <p text-center *ngIf="enc.estado == 2">{{enc.puntos_local}} -pts- {{enc.puntos_visita}}</p>
+
                     </ion-col>
                     <ion-col col-5 text-center>
                         <p class="font-size-12">{{enc.nombre_equipo_visita}}</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-grid *ngIf="enc.estado == 2">
+                <ion-row *ngFor="let detalle of detalleTercera">
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_local}}</p>
+                    </ion-col>
+                    <ion-col col-2>
+
+                        <p text-center>Tercera</p>
+
+                    </ion-col>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_visita}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let detalle of detalleSegunda">
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_local}}</p>
+                    </ion-col>
+                    <ion-col col-2>
+
+                        <p text-center>Segunda</p>
+
+                    </ion-col>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_visita}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let detalle of detalleSenior">
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_local}}</p>
+                    </ion-col>
+                    <ion-col col-2>
+
+                        <p text-center>Senior</p>
+
+                    </ion-col>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_visita}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngFor="let detalle of detallePrimera">
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_local}}</p>
+                    </ion-col>
+                    <ion-col col-2>
+
+                        <p text-center>Primera</p>
+
+                    </ion-col>
+                    <ion-col col-5 text-center>
+                        <p class="font-size-12">{{detalle.numero_goles_visita}}</p>
                     </ion-col>
                 </ion-row>
 

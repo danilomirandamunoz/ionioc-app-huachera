@@ -1,6 +1,6 @@
 <ion-tabs color="azulHuachera">
-    <ion-tab [root]="tab1Root" tabTitle="Inicio" tabIcon="home"></ion-tab>
-    <ion-tab [root]="tab2Root" tabTitle="Resultados" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="tab3Root" tabTitle="Posiciones" tabIcon="grid"></ion-tab>
+    <ion-tab [root]="tab1Root" [rootParams]="idCampeonato" tabTitle="Inicio" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" [rootParams]="idCampeonato" tabTitle="Resultados" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="tab3Root" [rootParams]="idCampeonato" tabTitle="Posiciones" tabIcon="grid"></ion-tab>
     <!-- <ion-tab [root]="tab4Root" tabTitle="Series" tabIcon="md-exit"></ion-tab> -->
 </ion-tabs>

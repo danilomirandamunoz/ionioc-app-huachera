@@ -30,13 +30,14 @@ export class PosicionPage {
   Generalpos:number=1;
 
   loading;
+  idCampeonato;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private localNotifications: LocalNotifications, public alertCtrl: AlertController
     , public proveedor:Proveedor1Provider, public loadingCtrl: LoadingController) {
     this.serie ="general";
     //this.posiciones = this.obtenerPosiciones();
     this.loading = this.load();
-
+    this.idCampeonato = navParams.data;
       this.obtenerDetalleGeneral();
       this.obtenerDetalleTercera();
       this.obtenerDetalleSegunda();
@@ -105,7 +106,7 @@ export class PosicionPage {
 
   obtenerDetalleGeneral()
   {
-    this.proveedor.obtenerPosiciones(5,1)
+    this.proveedor.obtenerPosiciones(5,this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -126,7 +127,7 @@ export class PosicionPage {
 
   obtenerDetalleTercera()
   {
-    this.proveedor.obtenerPosiciones(3,1)
+    this.proveedor.obtenerPosiciones(3,this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -141,7 +142,7 @@ export class PosicionPage {
 
   obtenerDetalleSegunda()
   {
-    this.proveedor.obtenerPosiciones(2,1)
+    this.proveedor.obtenerPosiciones(2,this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -156,7 +157,7 @@ export class PosicionPage {
 
   obtenerDetalleSenior()
   {
-    this.proveedor.obtenerPosiciones(4,1)
+    this.proveedor.obtenerPosiciones(4,this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -171,7 +172,7 @@ export class PosicionPage {
 
   obtenerDetallePrimera()
   {
-    this.proveedor.obtenerPosiciones(1,1)
+    this.proveedor.obtenerPosiciones(1,this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {

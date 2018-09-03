@@ -32,7 +32,6 @@ export class ResultadoPage {
     
 
     
-
       this.proveedor.obtenerCampeonatos()
       .subscribe((data:Respuesta)=>{
         if(!data.ok)

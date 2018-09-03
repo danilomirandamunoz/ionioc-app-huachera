@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController, ModalController } from 'ionic-angular';
+import { NavController, LoadingController, ModalController, NavParams, AlertController } from 'ionic-angular';
 
 import { Proveedor1Provider } from '../../providers/proveedor1/proveedor1';
 import { Observable } from 'rxjs/Observable';
@@ -15,12 +15,21 @@ export class HomePage {
 
   expulsados;
   proximoEncuentro;
-   constructor(public navCtrl: NavController, public proveedor:Proveedor1Provider, public loadingCtrl: LoadingController, public modalCtrl: ModalController) {
+  partidosSerie;
+  idCampeonato:number;
+  detalleTercera;
+  detalleSegunda;
+  detalleSenior;
+  detallePrimera;
 
-
+   constructor(public navCtrl: NavController, public proveedor:Proveedor1Provider, public loadingCtrl: LoadingController, public modalCtrl: ModalController,
+    public navParams: NavParams
+  , public alertCtrl: AlertController) {
     let loading = this.loading();
 
-    this.proveedor.obtenerExpulsados()
+    console.log("campeonato", navParams.data);
+    this.idCampeonato = navParams.data;
+    this.proveedor.obtenerExpulsados(this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -35,7 +44,7 @@ export class HomePage {
         console.log(data);
         this.expulsados = data.obj;
         
-        this.proveedor.obtenerProximoEncuentro().
+        this.proveedor.obtenerProximoEncuentro(this.idCampeonato).
                       subscribe((data:Respuesta)=>{
                         if(!data.ok)
                         {
@@ -44,6 +53,14 @@ export class HomePage {
                         else{
                         this.proximoEncuentro = data.obj;
                         console.log(this.proximoEncuentro);
+                          if(this.proximoEncuentro[0].estado == 2)
+                          {
+                            this.obtenerDetalleTercera(this.proximoEncuentro[0].id_encuentro);
+                            this.obtenerDetalleSegunda(this.proximoEncuentro[0].id_encuentro);
+                            this.obtenerDetalleSenior(this.proximoEncuentro[0].id_encuentro);
+                            this.obtenerDetallePrimera(this.proximoEncuentro[0].id_encuentro);
+                          }
+                        
                         
                         }
                         loading.dismiss();
@@ -82,11 +99,12 @@ export class HomePage {
     
   }
 
+
   recargar()
   {
     let loading = this.loading();
 
-    this.proveedor.obtenerExpulsados()
+    this.proveedor.obtenerExpulsados(this.idCampeonato)
     .subscribe((data:Respuesta)=>{
       if(!data.ok)
       {
@@ -101,7 +119,7 @@ export class HomePage {
         console.log(data);
         this.expulsados = data.obj;
         
-        this.proveedor.obtenerProximoEncuentro().
+        this.proveedor.obtenerProximoEncuentro(this.idCampeonato).
                       subscribe((data:Respuesta)=>{
                         if(!data.ok)
                         {
@@ -132,6 +150,71 @@ export class HomePage {
       load.present();
       //loading.dismiss();
     })
+  }
+
+
+  obtenerDetalleTercera(idencuentro)
+  {
+    this.proveedor.obtenerDetalleEncuentro(idencuentro,3)
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
+      {
+        console.log(data.obj);
+      }
+      else{
+        this.detalleTercera= data.obj;
+        console.log("detalle tercera",this.detalleTercera);
+      }
+    },
+    (error)=>{console.log(error);})
+  }
+
+  obtenerDetalleSegunda(idencuentro)
+  {
+    this.proveedor.obtenerDetalleEncuentro(idencuentro,2)
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
+      {
+        console.log(data.obj);
+      }
+      else{
+        this.detalleSegunda= data.obj;
+
+      }
+    },
+    (error)=>{console.log(error);})
+  }
+
+  obtenerDetalleSenior(idencuentro)
+  {
+    this.proveedor.obtenerDetalleEncuentro(idencuentro,4)
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
+      {
+        console.log(data.obj);
+      }
+      else{
+        this.detalleSenior= data.obj;
+
+      }
+    },
+    (error)=>{console.log(error);})
+  }
+
+  obtenerDetallePrimera(idencuentro)
+  {
+    this.proveedor.obtenerDetalleEncuentro(idencuentro,1)
+    .subscribe((data:Respuesta)=>{
+      if(!data.ok)
+      {
+        console.log(data.obj);
+      }
+      else{
+        this.detallePrimera= data.obj;
+        console.log(this.detallePrimera);
+      }
+    },
+    (error)=>{console.log(error);})
   }
 
 
